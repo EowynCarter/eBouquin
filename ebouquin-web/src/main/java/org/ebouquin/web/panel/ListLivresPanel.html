@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.5-strict.dtd">
+<wicket:panel>
+    <div class="repertoirehead" wicket:id="nomRepertoire"></div>
+    <div wicket:id="livrecontainer">
+        <div>
+            <div class="grid_5 bold center">Titre</div>
+            <div class="grid_4 bold center">Auteur</div>
+            <div class="grid_4 bold center">Version</div>
+            <div class="grid_4">&nbsp;</div>
+        </div>
+        <div class="clear"></div>
+        <div wicket:id="listLivre">
+            <div class="grid_5"><label wicket:id="titre">titre</label>&nbsp;</div>
+            <div class="grid_4"><label wicket:id="auteur">auteur</label>&nbsp;</div>
+            <div class="grid_4"><label wicket:id="version">version</label>&nbsp;</div>
+            <div class="grid_4"><a wicket:id="lienEdit" href="">Editer</a></div>
+            <div class="clear"></div>
+
+        </div>
+    </div>
+</wicket:panel>
+
+</html>

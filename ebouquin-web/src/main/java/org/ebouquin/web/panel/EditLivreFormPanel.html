@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.5-strict.dtd">
+<wicket:panel>
+    <form wicket:id="LivreForm">
+        <div class="grid_10" wicket:id="feedbackpanel"></div>
+        <div class="clear"></div>
+        <div class="grid_2 bold center">Titre</div>
+        <div class="grid_6"><input type="text" class="grid_6" wicket:id="titre"/></div>
+        <div class="clear"></div>
+        <div class="grid_2 bold center">Version</div>
+        <div class="grid_6"><label type="text" class="grid_4" wicket:id="version"></label>&nbsp;</div>
+        <div class="clear"></div>
+        <div class="grid_2 bold center">Auteur</div>
+        <div class="grid_4"><input type="text" class="grid_4" wicket:id="nomAuteur"/></div>
+        <div class="grid_4"><input type="text" class="grid_4" wicket:id="prenomAuteur"/></div>
+        <div class="clear"></div>
+        <div class="grid_2 bold center">Auteur 2</div>
+        <div class="grid_4"><input type="text" class="grid_4" wicket:id="nomAuteur2"/></div>
+        <div class="grid_4"><input type="text" class="grid_4" wicket:id="prenomAuteur2"/></div>
+        <div class="clear"></div>
+        <div class="grid_2 bold center">Auteur 3</div>
+        <div class="grid_4"><input type="text" class="grid_4" wicket:id="nomAuteur3"/></div>
+        <div class="grid_4"><input type="text" class="grid_4" wicket:id="prenomAuteur3"/></div>
+        <div class="clear"></div>
+        <div class="grid_4"><input type="text" class="grid_4" wicket:id="newLocation"/></div>
+        <div class="grid_4"><input type="text" class="grid_4" wicket:id="newFileName"/></div>
+        <div class="clear"></div>
+        <input class="grid_2" type="button" wicket:id="deplacer" value="deplacer"/>
+
+        <div class="clear"></div>
+        <input type="button" wicket:id="soumettre" value="Valider"/> <input type="button" wicket:id="archiver"
+                                                                            value="archiver"/> <input
+            type="submit" wicket:id="dearchiver" value="de-archiver"/>
+    </form>
+
+</wicket:panel>
+</html>

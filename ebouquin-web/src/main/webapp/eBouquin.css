@@ -1,0 +1,35 @@
+.menu a {
+    color: white;
+    border-radius: 10px 10px;
+    border: solid 2px black;
+    background-color: #0d7288;
+}
+
+.menu {
+    text-align: center;
+    height: 50px;
+}
+
+.right {
+    text-align: right;
+}
+
+.bordures {
+    color: black;
+    border-radius: 10px 10px;
+    border: solid 2px black;
+    background-color: #FFFFEE;
+    padding: 10px;
+}
+
+.repertoirehead {
+    color: #00FFF;
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
