@@ -3,18 +3,17 @@
 <wicket:panel>
     <div class="repertoirehead" wicket:id="nomRepertoire"></div>
     <div wicket:id="livrecontainer">
-        <div>
-            <div class="grid_5 bold center">Titre</div>
-            <div class="grid_4 bold center">Auteur</div>
-            <div class="grid_4 bold center">Version</div>
-            <div class="grid_4">&nbsp;</div>
+        <div class="header_liste_livre grid_18 clearfix">
+            <div class="grid_6 bold">Titre</div>
+            <div class="grid_4 bold">Auteur</div>
+            <div class="grid_4 bold">Version</div>
         </div>
-        <div class="clear"></div>
+
         <div wicket:id="listLivre">
-            <div class="grid_5"><label wicket:id="titre">titre</label>&nbsp;</div>
-            <div class="grid_4"><label wicket:id="auteur">auteur</label>&nbsp;</div>
-            <div class="grid_4"><label wicket:id="version">version</label>&nbsp;</div>
-            <div class="grid_4"><a wicket:id="lienEdit" href="">Editer</a></div>
+            <div class="grid_6 border"><label wicket:id="titre">titre</label>&nbsp;</div>
+            <div class="grid_4 border"><label wicket:id="auteur">auteur</label>&nbsp;</div>
+            <div class="grid_3 border"><label wicket:id="version">version</label>&nbsp;</div>
+            <div class="grid_2"><a wicket:id="lienEdit" href="">Editer</a></div>
             <div class="clear"></div>
 
         </div>

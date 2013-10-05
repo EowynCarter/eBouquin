@@ -6,6 +6,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.ebouquin.service.dto.RepertoireDTO;
 import org.ebouquin.services.service.FichierService;
 import org.ebouquin.web.panel.ListLivresPanel;
+import org.ebouquin.web.panel.ListLivresPanelCarrés;
 import org.ebouquin.web.panel.ListeRepertoirePanel;
 
 import java.nio.file.Path;
@@ -29,7 +30,7 @@ public class MainPage extends eBouquinPage {
 
         ListeRepertoirePanel panelListRepertoire = new ListeRepertoirePanel("panelListRepertoire", new ListModel<RepertoireDTO>(repertoireList));
 
-        ListLivresPanel panelListLivre = new ListLivresPanel("panelListLivre", new Model<String>(""), false);
+        ListLivresPanelCarrés panelListLivre = new ListLivresPanelCarrés("panelListLivre", new Model<String>(""), false);
         add(panelListRepertoire);
         add(panelListLivre);
     }

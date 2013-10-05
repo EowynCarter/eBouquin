@@ -1,29 +1,51 @@
 .menu a {
     color: white;
-    border-radius: 10px 10px;
-    border: solid 2px black;
-    background-color: #0d7288;
+    border-radius: 10px 10px 0px 0px;
+    border: solid 2px #1e7997;
+    background-color: #0e4b59;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 0px;
+}
+
+.header_liste_livre {
+    border-bottom: solid 2px black;
 }
 
 .menu {
     text-align: center;
-    height: 50px;
 }
 
 .right {
     text-align: right;
 }
 
+.fiche_livre {
+    border: solid 2px black;
+    margin-top: 5px;
+    padding: 5px;
+    height: 100px;
+}
+
 .bordures {
     color: black;
-    border-radius: 10px 10px;
-    border: solid 2px black;
-    background-color: #FFFFEE;
+    border-right: solid 2px black;
+    background-color: #fcf6de;
     padding: 10px;
 }
 
+.border {
+
+    border-right: solid 2px black;
+
+}
+
+.main_content {
+    border: solid 2px black;
+}
+
 .repertoirehead {
-    color: #00FFF;
+    color: #840405;
     text-align: center;
     padding-bottom: 10px;
     font-weight: bold;
