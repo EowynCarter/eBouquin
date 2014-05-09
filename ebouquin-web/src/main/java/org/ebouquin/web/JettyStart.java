@@ -18,9 +18,10 @@
  */
 package org.ebouquin.web;
 
+import javafx.scene.paint.Color;
 import org.apache.log4j.Logger;
-import org.mortbay.jetty.Server;
-import org.mortbay.jetty.webapp.WebAppContext;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.webapp.WebAppContext;
 
 /**
  * Seperate startup class for people that want to run the examples directly.
@@ -41,11 +42,13 @@ public class JettyStart {
         Server jettyServer = null;
         try {
 
-            jettyServer = new Server(8080);
+            jettyServer = new Server(8081);
 
             WebAppContext webapp = new WebAppContext();
             webapp.setContextPath("/");
             webapp.setWar("src/main/webapp/");
+            webapp.setExtraClasspath("src/main/webapp/plugin/");
+            webapp.setClassLoader(Thread.currentThread().getContextClassLoader());
             jettyServer.setHandler(webapp);
 
             jettyServer.start();
