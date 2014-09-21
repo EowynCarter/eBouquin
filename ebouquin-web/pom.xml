@@ -12,11 +12,6 @@
     <name>ebouquin-web</name>
     <packaging>war</packaging>
     <dependencies>
-        <dependency>
-            <groupId>ebouquin</groupId>
-            <artifactId>ePubLib</artifactId>
-            <version>1.1-SNAPSHOT</version>
-        </dependency>
         <!-- WICKET DEPENDENCIES -->
         <dependency>
             <groupId>org.apache.wicket</groupId>
