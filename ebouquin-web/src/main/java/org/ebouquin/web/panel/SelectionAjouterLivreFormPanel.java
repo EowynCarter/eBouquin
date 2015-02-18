@@ -64,8 +64,7 @@ public class SelectionAjouterLivreFormPanel extends Panel {
                             FichierServiceReturn livreRetour = fichierService.beforeInsert(tempFile, original, drm);
 
                             if (original) {
-                                //TODO extantion
-                                fichierService.copieOriginal(livreRetour.getFichier(), livreRetour.getLivre().getTitre() + ".epub");
+                                fichierService.copieOriginal(livreRetour.getFichier(), livreRetour.getLivre().getTitre() + livreRetour.getLivre().getFormat());
                             }
 
                             send(this.getPage(), Broadcast.BREADTH, new ValiderLivreEvent(target, livreRetour.getLivre(), livreRetour.getFichier().toString()));

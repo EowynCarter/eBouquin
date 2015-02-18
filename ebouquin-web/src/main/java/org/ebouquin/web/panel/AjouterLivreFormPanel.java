@@ -32,7 +32,7 @@ public class AjouterLivreFormPanel extends Panel {
                 System.out.println(livre);
                 System.out.println(pathToTmpFile);
 
-                livre.setFileName(livre.getTitre() + "_" + livre.getVersion() + ".epub");
+                livre.setFileName(livre.getTitre() + "_" + livre.getVersion() + "." + livre.getFormat());
 
                 try {
                     fichierService.insertLivre(livre, pathToTmpFile);

@@ -47,9 +47,9 @@ public class LivresMapper {
 
     static void MetadataToLivre(LivreMetadata livreMetadata, Livre livre) {
 
-        livreMetadata.setFormat(livre.getFormat());
         livre.setTitre(livreMetadata.getTitre());
         livre.setVersion(livreMetadata.getVersion());
+        livre.setFormat(livreMetadata.getFormat());
 
         AuteurMetadata auteur;
 

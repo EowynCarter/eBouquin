@@ -1,5 +1,7 @@
 package org.ebouquin.services.service;
 
+import eBouquin.ePubLib.ePubEdit.LectureService;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.ebouquin.ebouquinFormatPlugin.FormatPluginReturn;
 import org.ebouquin.ebouquinFormatPlugin.LivreFichierService;
@@ -30,8 +32,9 @@ public class FichierServiceImpl implements InitializingBean, FichierService {
     @Value("${ebouquin.original.directory}")
     private String originalDirectory;
 
+
     @Autowired
-    private LivreFichierService lectureService;
+    LivreServiceFactory livreServiceFactory;
 
     @Autowired
     private LivreDAO livreDAO;
@@ -230,6 +233,8 @@ public class FichierServiceImpl implements InitializingBean, FichierService {
 
 
         livreDAO.save(livre);
+
+        LivreFichierService lectureService = livreServiceFactory.getService(livre.getFormat());
         lectureService.updateMetadata(LivresMapper.mapLivreToMetadata(livre), libPath.resolve(livre.getLocation() + "/" + livre.getFileName()));
 
         return true;
@@ -243,7 +248,6 @@ public class FichierServiceImpl implements InitializingBean, FichierService {
 
         try {
 
-
             stream = Files.newDirectoryStream(repertoire);
             for (Path path2 : stream) {
 
@@ -252,7 +256,11 @@ public class FichierServiceImpl implements InitializingBean, FichierService {
                     logger.debug("Repertoire : " + path2.getFileSystem().toString());
                     retours.addAll(syncroFileSystem(path2, archive));
                 } else {
+                    String chemmin = path2.toString();
                     try {
+
+                        String extention = chemmin.substring(StringUtils.lastIndexOf(chemmin, ".") + 1, chemmin.length());
+                        LivreFichierService lectureService = livreServiceFactory.getService(extention);
                         LivreMetadata metadata = lectureService.liremetadata(path2);
 
                         Livre livre = new Livre();
@@ -287,7 +295,7 @@ public class FichierServiceImpl implements InitializingBean, FichierService {
                         livreDAO.save(livre);
                     } catch (Exception e) {
                         logger.error(e.getMessage(), e);
-                        retours.add("Erreur lors de la lecture du  fichier " + path2.toString() + " : " + e.getMessage());
+                        retours.add("Erreur lors de la lecture du  fichier " + chemmin + " : " + e.getMessage());
                     }
                 }
             }
@@ -303,6 +311,10 @@ public class FichierServiceImpl implements InitializingBean, FichierService {
     public FichierServiceReturn beforeInsert(Path fichier, boolean original, boolean drm) {
 
         FichierServiceReturn retour = new FichierServiceReturn();
+
+        String chemmin = fichier.toString();
+        String extention = chemmin.substring(StringUtils.lastIndexOf(chemmin, ".") + 1, chemmin.length());
+        LivreFichierService lectureService = livreServiceFactory.getService(extention);
 
         FormatPluginReturn livreRetour = lectureService.beforeInsert(fichier, drm);
 
