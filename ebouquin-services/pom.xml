@@ -111,5 +111,10 @@
             <artifactId>ebouquin-epub-plugin</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>ebouquin</groupId>
+            <artifactId>ebouquin-pdf-plugin</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
